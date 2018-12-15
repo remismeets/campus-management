@@ -1,0 +1,140 @@
+{
+  "buildings": [
+    {
+      "buildingName": "Campus Groenplaats",
+      "floors": [
+        {
+          "floorName": -1,
+          "rooms": [
+            {
+              "roomName": "GR -101",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "GR -102",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        },
+        {
+          "floorName": 0,
+          "rooms": [
+            {
+              "roomName": "GR 001",
+              "roomType": "Aula",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "Floor",
+              "roomType": "Study room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        },
+        {
+          "floorName": 1,
+          "rooms": [
+            {
+              "roomName": "GR 101",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "GR 102",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buildingName": "Campus Pothoek",
+      "floors": [
+        {
+          "floorName": -1,
+          "rooms": [
+            {
+              "roomName": "PH -E101",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "PH -102",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        },
+        {
+          "floorName": 0,
+          "rooms": [
+            {
+              "roomName": "PH E001",
+              "roomType": "Cafetaria",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "PH E002",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        },
+        {
+          "floorName": 1,
+          "rooms": [
+            {
+              "roomName": "PH E101",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            },
+            {
+              "roomName": "PH E102",
+              "roomType": "Class room",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
