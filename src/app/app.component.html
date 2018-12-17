@@ -1,17 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<ul>
-  <li *ngFor="let building of buildings">
-    {{building.buildingName}}
-    <ul>
-      <li *ngFor="let floor of building.floors">
-        {{floor.floorName}}
-        <ul>
-          <li *ngFor="let room of floor.rooms">
-            {{room.roomName}}
-            {{room.roomType}}
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+<header>
+  <h1 class="title">Campus management</h1>
+  <nav>
+    <button routerLink="/list">List view</button>
+    <button routerLink="/floorplan">Floor plan view</button>
+  </nav>
+</header>
+
+<section class="router-element">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Examen Project User Interfaces 3 - © Rémi Smeets
+</footer>

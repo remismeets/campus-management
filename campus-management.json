@@ -7,20 +7,52 @@
           "floorName": -1,
           "rooms": [
             {
+              "roomName": "GR -100",
+              "roomType": "classroom",
+              "capacity": 0,
+              "beamer": false,
+              "occupied": false,
+              "noise": 0
+            },
+            {
               "roomName": "GR -101",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 0
             },
             {
               "roomName": "GR -102",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 0
+            },
+            {
+              "roomName": "GR -106",
+              "roomType": "classroom",
+              "capacity": 0,
+              "beamer": false,
+              "occupied": false,
+              "noise": 0
+            },
+            {
+              "roomName": "GR -107",
+              "roomType": "classroom",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 0
+            },
+            {
+              "roomName": "GR -109",
+              "roomType": "classroom",
+              "capacity": 0,
+              "beamer": true,
+              "occupied": false,
+              "noise": 0
             }
           ]
         },
@@ -29,15 +61,15 @@
           "rooms": [
             {
               "roomName": "GR 001",
-              "roomType": "Aula",
+              "roomType": "aula",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 0
             },
             {
-              "roomName": "Floor",
-              "roomType": "Study room",
+              "roomName": "GR 008",
+              "roomType": "studyroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -50,7 +82,7 @@
           "rooms": [
             {
               "roomName": "GR 101",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -58,7 +90,7 @@
             },
             {
               "roomName": "GR 102",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -76,7 +108,7 @@
           "rooms": [
             {
               "roomName": "PH -E101",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -84,7 +116,7 @@
             },
             {
               "roomName": "PH -102",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -97,7 +129,7 @@
           "rooms": [
             {
               "roomName": "PH E001",
-              "roomType": "Cafetaria",
+              "roomType": "cafetaria",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -105,7 +137,7 @@
             },
             {
               "roomName": "PH E002",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -118,7 +150,7 @@
           "rooms": [
             {
               "roomName": "PH E101",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,
@@ -126,7 +158,7 @@
             },
             {
               "roomName": "PH E102",
-              "roomType": "Class room",
+              "roomType": "classroom",
               "capacity": 0,
               "beamer": true,
               "occupied": false,

@@ -1,0 +1,21 @@
+<div class="selectstyle">
+  <select [ngModel]="selectedBuilding" (ngModelChange)="onChangeBuilding($event)">
+    <option [ngValue]="building" *ngFor="let building of buildings">
+      {{ building.buildingName }}
+    </option>
+  </select>
+</div>
+
+<div *ngIf="selectedBuilding" >
+  <select [ngModel]="selectedFloor" (ngModelChange)="onChangeFloor($event)">
+    <option [ngValue]="floor" *ngFor="let floor of selectedBuilding.floors">
+      {{ floor.floorName }}
+    </option>
+  </select>
+</div>
+
+<div class="listfloor" *ngIf="selectedFloor">
+  <app-room  *ngFor="let room of selectedFloor.rooms"
+            [room]="room">
+  </app-room>
+</div>

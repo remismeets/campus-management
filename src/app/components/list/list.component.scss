@@ -1,0 +1,14 @@
+
+
+.listfloor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+select {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.9em;
+}

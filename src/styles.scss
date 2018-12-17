@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: #36D1DC; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-decoration: none;
+  user-select: none;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+h2 {
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+}
+
+p {
+  color: #685206;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+app-root {
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "router-element"
+    "footer";
+}
