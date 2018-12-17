@@ -10,7 +10,7 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
 })
 export class RoomComponent implements OnInit {
   @Input() room: Room;
-  occupied_style: string;
+  backgroundColor: string;
 
   constructor() {
   }
@@ -22,14 +22,17 @@ export class RoomComponent implements OnInit {
   change_background() {
     if (this.room.roomType === 'aula' || this.room.roomType === 'classroom' || this.room.roomType === 'conferenceroom') {
       if (this.room.occupied === true) {
-        this.occupied_style = 'occupied listroom';
+        this.backgroundColor = 'red';
       } else {
-        this.occupied_style = 'not-occupied listroom';
+        this.backgroundColor = 'green';
       }
     } else if (this.room.roomType === 'cafetaria' || this.room.roomType === 'studyroom' )  {
-      this.occupied_style = 'listroom';
+      const R = (255 * this.room.noise) / this.room.capacity;
+      const G = (255 * (this.room.capacity - this.room.noise)) / this.room.capacity;
+      const B = 0;
+      this.backgroundColor = 'rgb(' + R + ', ' + G + ', ' + B + ')';
     } else {
-      this.occupied_style = 'listroom';
+      this.backgroundColor = 'blue';
     }
   }
 }

@@ -70,7 +70,7 @@
             {
               "roomName": "GR 008",
               "roomType": "studyroom",
-              "capacity": 0,
+              "capacity": 100,
               "beamer": true,
               "occupied": false,
               "noise": 20
@@ -130,7 +130,7 @@
             {
               "roomName": "PH E001",
               "roomType": "cafetaria",
-              "capacity": 0,
+              "capacity": 100,
               "beamer": true,
               "occupied": false,
               "noise": 20

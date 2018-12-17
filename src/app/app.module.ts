@@ -10,6 +10,7 @@ import { RoomComponent } from './components/room/room.component';
 import { ListComponent } from './components/list/list.component';
 import { FloorplanComponent } from './components/floorplan/floorplan.component';
 import {RouterModule, Routes} from '@angular/router';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     AppComponent,
     RoomComponent,
     ListComponent,
-    FloorplanComponent
+    FloorplanComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

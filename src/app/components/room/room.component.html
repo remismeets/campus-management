@@ -1,8 +1,7 @@
-<section [className]="occupied_style">
+<section class="listroom" [style.background-color]="backgroundColor">
 <div>{{room.roomName}}</div>
 <div><img [src]='"assets/img/"+room.roomType+".svg"'></div>
 <div>{{room.capacity}} <img src="assets/img/capacity.svg"></div>
 <div *ngIf="room.beamer;else unavailable_div"><img src="assets/img/beamer.svg"></div>
 <ng-template #unavailable_div><div><img src="assets/img/cross.svg"></div></ng-template>
-<div>{{room.noise}}</div>
 </section>

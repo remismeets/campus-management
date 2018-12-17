@@ -9,11 +9,15 @@ import {Observable} from 'rxjs';
 export class BuildingService {
   constructor(private db: AngularFireDatabase) { }
 
-  public getBuilding(id: number): Observable<any> {
-    return this.db.object('buildings/' + id).valueChanges();
-  }
-
   public getBuildings(): Observable<any> {
     return this.db.list('buildings').valueChanges();
+  }
+
+  public getFloors(building: number): Observable<any> {
+    return this.db.list('buildings/' + building + '/floors').valueChanges();
+  }
+
+  public getRooms(building: number, floor: number): Observable<any> {
+    return this.db.list('buildings/' + building + '/floors/' + floor + '/rooms').valueChanges();
   }
 }
