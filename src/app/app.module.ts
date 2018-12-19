@@ -11,6 +11,7 @@ import { ListComponent } from './components/list/list.component';
 import { FloorplanComponent } from './components/floorplan/floorplan.component';
 import {RouterModule, Routes} from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RoomOptionsComponent } from './components/room-options/room-options.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
     RoomComponent,
     ListComponent,
     FloorplanComponent,
-    NavigationComponent
+    NavigationComponent,
+    RoomOptionsComponent
   ],
   imports: [
     BrowserModule,

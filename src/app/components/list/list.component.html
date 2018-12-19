@@ -1,21 +1,35 @@
-<div class="selectstyle">
-  <select [(ngModel)]="selectedBuilding" (ngModelChange)="onChangeBuilding($event)">
-    <option *ngFor="let building of buildings;index as i" [ngValue]="i">
-      {{ building.buildingName }}
-    </option>
-  </select>
-</div>
+<div class="selection">
+  <div>
+    <select [(ngModel)]="selectedBuilding" (ngModelChange)="onChangeBuilding($event)">
+      <option *ngFor="let building of buildings;index as i" [ngValue]="i">
+        {{ building.buildingName }}
+      </option>
+    </select>
+  </div>
 
-<div *ngIf="floors" >
-  <select [ngModel]="selectedFloor" (ngModelChange)="onChangeFloor($event)">
-    <option *ngFor="let floor of floors;index as i" [ngValue]="i">
-      {{ floor.floorName }}
-    </option>
-  </select>
+  <div *ngIf="floors">
+    <select [ngModel]="selectedFloor" (ngModelChange)="onChangeFloor($event)">
+      <option *ngFor="let floor of floors;index as i" [ngValue]="i">
+        {{ floor.floorName }}
+      </option>
+    </select>
+  </div>
 </div>
 
 <div class="listfloor" *ngIf="rooms">
-  <app-room *ngFor="let room of rooms"
-            [room]="room">
+  <app-room-options class="options"
+                    (name)="onNameChecked($event)"
+                    (type)="onTypeChecked($event)"
+                    (capacity)="onCapacityChecked($event)"
+                    (beamer)="onBeamerChecked($event)"
+                    (occupied)="onOccupiedChecked($event)"
+  ></app-room-options>
+  <app-room class="listroom" *ngFor="let room of rooms"
+            [room]="room"
+            [nameChecked]="nameChecked"
+            [typeChecked]="typeChecked"
+            [capacityChecked]="capacityChecked"
+            [beamerChecked]="beamerChecked"
+            [occupiedChecked]="occupiedChecked">
   </app-room>
 </div>

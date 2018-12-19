@@ -1,7 +1,9 @@
-<section class="listroom" [style.background-color]="backgroundColor">
-<div>{{room.roomName}}</div>
-<div><img [src]='"assets/img/"+room.roomType+".svg"'></div>
-<div>{{room.capacity}} <img src="assets/img/capacity.svg"></div>
-<div *ngIf="room.beamer;else unavailable_div"><img src="assets/img/beamer.svg"></div>
-<ng-template #unavailable_div><div><img src="assets/img/cross.svg"></div></ng-template>
-</section>
+<div *ngIf="nameChecked" (click)="onRoomClicked()">{{room.roomName}}</div>
+<div *ngIf="typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
+<div><span *ngIf="capacityChecked">{{room.capacity}}</span> <i *ngIf="occupiedChecked" class="fas fa-users" [style.color]="backgroundColor"></i></div>
+<div *ngIf="room.beamer;else unavailable_div"><img *ngIf="beamerChecked" src="assets/img/beamer.svg"></div>
+<ng-template #unavailable_div><div><img *ngIf="beamerChecked" src="assets/img/cross.svg"></div></ng-template>
+<div *ngIf="selected" class="optionscontainer">
+  <input *ngIf="hasSlider()" type="range" min="0" [max]="room.capacity" [value]="room.noise" class="slider" id="myRange" [(ngModel)]="room.noise" (change)="changeBackground()">
+  <button class="btn btn-outline-light">Reserve</button>
+</div>

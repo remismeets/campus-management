@@ -7,6 +7,55 @@
 
 select {
   display: block;
-  margin: 0 auto;
-  font-size: 1.9em;
+  margin: 5px;
+  font-size: 1em;
+  background-color: transparent;
+  color: white;
+  padding: 16px 32px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+select option {
+  margin: 40px;
+  background: white;
+  color: #447cb2;
+}
+
+.selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.options {
+  border: 2px solid white;
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listroom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-bottom: 5px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 540px) {
+  .options {
+    width: 30%;
+  }
 }

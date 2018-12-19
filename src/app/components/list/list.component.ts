@@ -17,8 +17,15 @@ export class ListComponent implements OnInit {
   buildingIndex: number;
   floorIndex: number;
   rooms: Room[];
+  nameChecked = true;
+  typeChecked = true;
+  capacityChecked = false;
+  beamerChecked = false;
+  occupiedChecked = true;
+  selectedRoom: Room;
 
-  constructor(private buildingService: BuildingService) { }
+  constructor(private buildingService: BuildingService) {
+  }
 
   ngOnInit() {
     this.buildingService.getBuildings()
@@ -44,5 +51,30 @@ export class ListComponent implements OnInit {
       .subscribe(rooms => {
         this.rooms = rooms as Room[];
       });
+  }
+
+  onNameChecked(name) {
+    this.nameChecked = name;
+  }
+
+  onTypeChecked(type) {
+    this.typeChecked = type;
+  }
+
+  onCapacityChecked(capacity) {
+    this.capacityChecked = capacity;
+  }
+
+  onBeamerChecked(beamer) {
+    this.beamerChecked = beamer;
+  }
+
+  onOccupiedChecked(occupied) {
+    this.occupiedChecked = occupied;
+  }
+
+  onSelectedRoom(selectedRoom) {
+    this.selectedRoom = selectedRoom;
+
   }
 }
