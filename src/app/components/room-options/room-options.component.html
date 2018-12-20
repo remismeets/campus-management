@@ -1,21 +1,25 @@
-<h2>Options</h2>
-<label class="checkbox">
-  <input value="Name" type="checkbox" [(ngModel)]="nameChecked" (change)="emitNameChecked()">
-  Name
-</label>
-<label class="checkbox">
-  <input value="Type" type="checkbox" [(ngModel)]="typeChecked" (change)="emitTypeChecked()">
-  Type
-</label>
-<label class="checkbox">
-  <input value="Capacity" type="checkbox" [(ngModel)]="capacityChecked" (change)="emitCapacityChecked()">
-  Capacity
-</label>
-<label class="checkbox">
-  <input value="Beamerchecked" type="checkbox" [(ngModel)]="beamerChecked" (change)="emitBeamerChecked()">
-  Beamer
-</label>
-<label class="checkbox">
-  <input value="Occupied" type="checkbox" [(ngModel)]="occupiedChecked" (change)="emitOccupiedChecked()">
-  Occupied/Noise
-</label>
+<div class="options-container">
+  <div class="options-name">Options</div>
+  <div class="options-info">
+    <div class="checkbox">
+      <input value="roomname" id="roomname" type="checkbox" [(ngModel)]="nameChecked" (change)="emitNameChecked()">
+      <label for="roomname">Room name</label>
+    </div>
+    <div class="checkbox">
+      <input value="roomtype" id="roomtype" type="checkbox" [(ngModel)]="typeChecked" (change)="emitTypeChecked()">
+      <label for="roomtype">Room type</label>
+    </div>
+    <div class="checkbox">
+      <input value="capacity" id="capacity" type="checkbox" [(ngModel)]="capacityChecked" (change)="emitCapacityChecked()">
+      <label for="capacity">Capacity</label>
+    </div>
+    <div class="checkbox">
+      <input value="beamer" id="beamer" type="checkbox" [(ngModel)]="beamerChecked" (change)="emitBeamerChecked()">
+      <label for="beamer">Beamer</label>
+    </div>
+    <div class="checkbox">
+      <input value="occupied" id="occupied" type="checkbox" [(ngModel)]="occupiedChecked" (change)="emitOccupiedChecked()">
+      <label for="occupied">Occupied/Noise</label>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BuildingService} from './services/building.service';
+import {FirebaseService} from './services/firebase.service';
 import {Building} from './model/building';
 
 @Component({

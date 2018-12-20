@@ -1,0 +1,234 @@
+.room-container{
+  width: 100%;
+  margin: 25px auto 0 auto;
+  box-shadow: 1px 1px 10px #b6b6b6;
+  background-color: #f3f3f3;
+}
+
+.room-name{
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  background-color: #4691d9;
+  margin: 0 0 5px;
+}
+
+.room-info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"] {
+  height: 60px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #4691d9;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background-size: 200px 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #4691d9 4%) no-repeat -200px 0;
+  color: darken(#4691d9, 20%);
+  &:focus, &:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+    &::-webkit-input-placeholder {
+      color: #4691d9;
+      font-size: 14px;
+      transform: translateY(-20px);
+      visibility: visible !important;
+      margin-top: 40px;
+    }
+  }
+}
+
+input[type="text"]::-webkit-input-placeholder, button {
+  font-family: 'roboto', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.enabled {
+  border: none;
+  background: #4691d9;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+  }
+}
+
+.disabled {
+  background: #DDDDDD;
+  border: none;
+  cursor: not-allowed;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: none;
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+$md-radio-checked-color: rgb(51, 122, 183);
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 15px;
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.md-radio {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 2px;
+
+  input[type="radio"] {
+    display: none;
+    &:checked + label:before {
+      border-color: $md-radio-checked-color;
+      animation: ripple 0.2s linear forwards;
+    }
+    &:checked + label:after {
+      transform: scale(1);
+    }
+  }
+
+  label {
+    display: inline-block;
+    height:$md-radio-size;
+    position: relative;
+    padding: 0 ($md-radio-size + 10px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+      transition-property: transform, border-color;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+      width: $md-radio-size;
+      height: $md-radio-size;
+      border: 2px solid $md-radio-border-color;
+    }
+    &:after {
+      top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      width:$md-radio-checked-size;
+      height:$md-radio-checked-size;
+      transform: scale(0);
+      background:$md-radio-checked-color;
+    }
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+#toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#toast.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@media screen and (min-width: 540px) {
+  .room-container {
+    width: 40%;
+  }
+
+}

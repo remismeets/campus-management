@@ -24,12 +24,18 @@
                     (beamer)="onBeamerChecked($event)"
                     (occupied)="onOccupiedChecked($event)"
   ></app-room-options>
-  <app-room class="listroom" *ngFor="let room of rooms"
+  <div class="rooms-container">
+  <app-room *ngFor="let room of rooms;index as i"
             [room]="room"
             [nameChecked]="nameChecked"
             [typeChecked]="typeChecked"
             [capacityChecked]="capacityChecked"
             [beamerChecked]="beamerChecked"
-            [occupiedChecked]="occupiedChecked">
+            [occupiedChecked]="occupiedChecked"
+            [buildingIndex]="buildingIndex"
+            [floorIndex]="floorIndex"
+            [roomIndex]="i"
+  (selectedRoom)="onSelectedRoom($event)">
   </app-room>
+  </div>
 </div>

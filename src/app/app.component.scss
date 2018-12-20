@@ -1,12 +1,14 @@
 header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  background-color: #4691d9;
+
 }
 
 button {
-  background-color: transparent;
+  background-color: #4691d9;
   color: white;
   padding: 16px 32px;
   text-align: center;
@@ -24,8 +26,7 @@ button {
 }
 
 button:hover {
-  background-color: white;
-  color: #447cb2;
+  background-color: #0074D9;
 }
 
 footer {
@@ -35,14 +36,10 @@ footer {
   padding: 10px;
 }
 
-.title {
-  width: 100%;
-  text-align: center;
-}
-
 nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }

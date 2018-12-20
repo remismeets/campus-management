@@ -4,50 +4,19 @@ img {
   height: 50px;
 }
 
-div {
-  width: 150px;
-  display: flex;
-  align-items: center;
-}
 
 /* Toolbar section */
-.optionscontainer {
-  width: 100%; /* Width of the outside container */
+.options-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  width: 50%; /* Full-width */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-  background-color: #687886;
-}
-
-.slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #008CBA; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #008CBA; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
 
 button {
-  background-color: white;
-  color: #447cb2;
+  background-color: transparent;
+  box-shadow: 1px 1px 10px #b6b6b6;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -66,4 +35,182 @@ button {
 button:hover {
   background-color: #447cb2;
   color: white;
+}
+
+.room-container{
+  width: 100%;
+  margin: 25px auto 0 auto;
+  box-shadow: 1px 1px 10px #b6b6b6;
+  background-color: #f3f3f3;
+}
+
+.room-name{
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  background-color: #4691d9;
+  margin: 0 0 5px;
+}
+
+.room-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 2em;
+
+  div {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+}
+
+.reserve-container {
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  width: 40%;
+}
+
+/* track */
+input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 1px;
+  background-color: #0074D9;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  transition: all 400ms;
+  outline:none;
+  padding: 0;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  background-color: #4691d9;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  transition: all 400ms;
+  outline:none;
+  padding: 0;
+}
+
+/* thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  transform:scale(0.75);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #4691d9;
+  border-radius: 40px;
+  transition: all 400ms;
+  outline:none
+}
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none !important;
+  transform:scale(0.75);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #4691d9;
+  border-radius: 30px;
+  transition: all 400ms;
+  outline:none
+}
+
+/* thumb hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform:scale(0.85);
+}
+input[type="range"]::-moz-range-thumb:hover{
+  transform:scale(0.85);
+}
+
+/* thumb active */
+input[type="range"]::-webkit-slider-thumb:active {
+  transform:scale(1);
+}
+input[type="range"]::-moz-range-thumb:active{
+  transform:scale(1);
+}
+
+
+$md-radio-checked-color: rgb(51, 122, 183);
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 15px;
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.md-radio {
+  font-size: 16px;
+  display: inline-block;
+
+  input[type="radio"] {
+    display: none;
+    &:checked + label:before {
+      border-color: $md-radio-checked-color;
+      animation: ripple 0.2s linear forwards;
+    }
+    &:checked + label:after {
+      transform: scale(1);
+    }
+  }
+
+  label {
+    display: inline-block;
+    height:$md-radio-size;
+    position: relative;
+    padding: 0 ($md-radio-size + 10px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+      transition-property: transform, border-color;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+      width: $md-radio-size;
+      height: $md-radio-size;
+      border: 2px solid $md-radio-border-color;
+    }
+    &:after {
+      top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      width:$md-radio-checked-size;
+      height:$md-radio-checked-size;
+      transform: scale(0);
+      background:$md-radio-checked-color;
+    }
+  }
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }

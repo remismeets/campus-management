@@ -5,4 +5,5 @@ export class Room {
   beamer: boolean;
   occupied: boolean;
   noise: number;
+  minutesLeft: number;
 }

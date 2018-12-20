@@ -1,9 +1,38 @@
-<div *ngIf="nameChecked" (click)="onRoomClicked()">{{room.roomName}}</div>
-<div *ngIf="typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
-<div><span *ngIf="capacityChecked">{{room.capacity}}</span> <i *ngIf="occupiedChecked" class="fas fa-users" [style.color]="backgroundColor"></i></div>
-<div *ngIf="room.beamer;else unavailable_div"><img *ngIf="beamerChecked" src="assets/img/beamer.svg"></div>
-<ng-template #unavailable_div><div><img *ngIf="beamerChecked" src="assets/img/cross.svg"></div></ng-template>
-<div *ngIf="selected" class="optionscontainer">
-  <input *ngIf="hasSlider()" type="range" min="0" [max]="room.capacity" [value]="room.noise" class="slider" id="myRange" [(ngModel)]="room.noise" (change)="changeBackground()">
-  <button class="btn btn-outline-light">Reserve</button>
+<div class="room-container" (click)="onRoomClicked()">
+  <div class="room-name" *ngIf="nameChecked">{{room.roomName}}</div>
+  <div class="room-info">
+    <div *ngIf="typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
+    <div><span class="capacity" *ngIf="capacityChecked">{{room.capacity}}</span> <i *ngIf="occupiedChecked"
+                                                                                    class="fas fa-users"
+                                                                                    [style.color]="backgroundColor"></i>
+    </div>
+    <div *ngIf="room.beamer;else unavailable_div"><img *ngIf="beamerChecked" src="assets/img/beamer.svg"></div>
+    <ng-template #unavailable_div>
+      <div><img *ngIf="beamerChecked" src="assets/img/cross.svg"></div>
+    </ng-template>
+    <div *ngIf="selected" class="options-container">
+      <div *ngIf="hasSlider()" class="slider">
+        <input type="range" min="0" [max]="room.capacity" [value]="room.noise"
+               id="myRange" [(ngModel)]="room.noise" (change)="changeBackground()">
+      </div>
+      <div *ngIf="canReserve()" class="reserve-container">
+        <div>
+          <div class="md-radio">
+            <input id="1" type="radio" name="reserve" [value]="1" [(ngModel)]="hoursReserved">
+            <label for="1">1 hour</label>
+          </div>
+          <div class="md-radio">
+            <input id="2" type="radio" name="reserve" [value]="2" [(ngModel)]="hoursReserved">
+            <label for="2">2 hours</label>
+          </div>
+          <div class="md-radio">
+            <input id="3" type="radio" name="reserve" [value]="3" [(ngModel)]="hoursReserved">
+            <label for="3">3 hours</label>
+          </div>
+        </div>
+        <button (click)="reserveRoom()">Reserve</button>
+      </div>
+      <button [routerLink]="['/buildings', buildingIndex, 'floors', floorIndex, 'rooms', roomIndex]">Details</button>
+    </div>
+  </div>
 </div>

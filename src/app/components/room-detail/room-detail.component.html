@@ -1,0 +1,39 @@
+<div *ngIf="room" class="room-container">
+  <div class="room-name">{{room.roomName}}</div>
+  <form class="room-info" (ngSubmit)="saveRoom()" #roomForm="ngForm">
+    <div class="input-container">
+      <input id="roomname"  placeholder="Room name" type="text" name="roomname" required [(ngModel)]="room.roomName">
+    </div>
+    <div class="input-container">
+      <input placeholder="Capacity" type="text" name="capacity" required [(ngModel)]="room.capacity">
+    </div>
+    <div *ngIf="hasNoise()" class="input-container">
+      <input placeholder="Noise" type="text" name="noise" [(ngModel)]="room.noise">
+    </div>
+    <div class="input-container">
+      <div class="radio-container">
+        <div *ngFor="let roomtype of roomtypes" class="md-radio">
+          <input id="{{roomtype}}" type="radio" name="roomtype" [value]="roomtype" [(ngModel)]="room.roomType">
+          <label for="{{roomtype}}">{{roomtype | titlecase}}</label>
+        </div>
+      </div>
+      <div class="radio-container">
+        <div class="md-radio">
+          <input id="beamer" type="radio" name="beamer" [value]=true [(ngModel)]="room.beamer">
+          <label for="beamer">Beamer</label>
+        </div>
+        <div class="md-radio">
+          <input id="no-beamer" type="radio" name="beamer" [value]=false [(ngModel)]="room.beamer">
+          <label for="no-beamer">No beamer</label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button type="submit" class="enabled" [disabled]="!roomForm.form.valid" [class.disabled]="!roomForm.form.valid">
+        Save room
+      </button>
+    </div>
+  </form>
+</div>
+
+<div id="toast" [class.show]="toast">Room was updated</div>

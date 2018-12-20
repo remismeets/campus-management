@@ -12,10 +12,12 @@ import { FloorplanComponent } from './components/floorplan/floorplan.component';
 import {RouterModule, Routes} from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RoomOptionsComponent } from './components/room-options/room-options.component';
+import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'floorplan', component: FloorplanComponent },
+  { path: 'buildings/:buildingid/floors/:floorid/rooms/:roomid', component: RoomDetailComponent },
   { path: '**', redirectTo: '/list', pathMatch: 'full' }
 ];
 
@@ -26,7 +28,8 @@ const routes: Routes = [
     ListComponent,
     FloorplanComponent,
     NavigationComponent,
-    RoomOptionsComponent
+    RoomOptionsComponent,
+    RoomDetailComponent
   ],
   imports: [
     BrowserModule,

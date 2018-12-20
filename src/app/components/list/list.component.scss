@@ -1,8 +1,7 @@
 .listfloor {
-  display: flex;
+  display: grid;
   flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
+  grid-template-columns: 100%;
 }
 
 select {
@@ -10,16 +9,15 @@ select {
   margin: 5px;
   font-size: 1em;
   background-color: transparent;
-  color: white;
+  color: #447cb2;
   padding: 16px 32px;
   cursor: pointer;
-  border: 2px solid white;
   border-radius: 12px;
 }
 
 select option {
   margin: 40px;
-  background: white;
+  background: #f3f3f3;
   color: #447cb2;
 }
 
@@ -30,32 +28,26 @@ select option {
   flex-wrap: wrap;
 }
 
-.options {
-  border: 2px solid white;
-  border-radius: 12px;
+.rooms-container {
   display: flex;
-  width: 100%;
-  margin-bottom: 5px;
   flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.listroom {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-bottom: 5px;
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 12px;
 }
 
 @media screen and (min-width: 540px) {
+  .listfloor {
+    flex-direction: row;
+    grid-template-rows: 100%;
+    grid-template-columns: 70% 30%;
+  }
+
+  .rooms-container {
+    order: 1;
+  }
+
   .options {
-    width: 30%;
+    order: 2;
+    margin-left: 20px;
   }
 }

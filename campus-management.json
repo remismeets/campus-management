@@ -12,7 +12,8 @@
               "capacity": 0,
               "beamer": false,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR -101",
@@ -20,7 +21,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR -102",
@@ -28,7 +30,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR -106",
@@ -36,7 +39,8 @@
               "capacity": 0,
               "beamer": false,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR -107",
@@ -44,7 +48,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR -109",
@@ -52,7 +57,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             }
           ]
         },
@@ -65,7 +71,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 0
+              "noise": 0,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR 008",
@@ -73,7 +80,8 @@
               "capacity": 100,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             }
           ]
         },
@@ -86,7 +94,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             },
             {
               "roomName": "GR 102",
@@ -94,7 +103,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             }
           ]
         }
@@ -112,7 +122,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             },
             {
               "roomName": "PH -102",
@@ -120,7 +131,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             }
           ]
         },
@@ -133,7 +145,8 @@
               "capacity": 100,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             },
             {
               "roomName": "PH E002",
@@ -141,7 +154,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             }
           ]
         },
@@ -154,7 +168,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             },
             {
               "roomName": "PH E102",
@@ -162,7 +177,8 @@
               "capacity": 0,
               "beamer": true,
               "occupied": false,
-              "noise": 20
+              "noise": 20,
+              "minutesLeft": 0
             }
           ]
         }

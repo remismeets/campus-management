@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {BuildingService} from '../../services/building.service';
+import {FirebaseService} from '../../services/firebase.service';
 import {Building} from '../../model/building';
 import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
+import {RoomComponent} from '../room/room.component';
+import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 @Component({
   selector: 'app-list',
@@ -22,9 +24,10 @@ export class ListComponent implements OnInit {
   capacityChecked = false;
   beamerChecked = false;
   occupiedChecked = true;
-  selectedRoom: Room;
+  selectedRoom: RoomComponent;
+  timeOutId: number;
 
-  constructor(private buildingService: BuildingService) {
+  constructor(private buildingService: FirebaseService) {
   }
 
   ngOnInit() {
@@ -74,7 +77,14 @@ export class ListComponent implements OnInit {
   }
 
   onSelectedRoom(selectedRoom) {
+    if (this.selectedRoom != null) {
+      this.selectedRoom.selected = false;
+      clearTimeout(this.timeOutId);
+    }
     this.selectedRoom = selectedRoom;
-
+    this.selectedRoom.selected = true;
+    this.timeOutId = setTimeout(() => {
+      this.selectedRoom.selected = false;
+    }, 5000);
   }
 }

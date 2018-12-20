@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-room',
@@ -15,15 +16,24 @@ export class RoomComponent implements OnInit {
   @Input() capacityChecked: boolean;
   @Input() beamerChecked: boolean;
   @Input() occupiedChecked: boolean;
-  @Output() selectedRoom: EventEmitter<Room> = new EventEmitter<Room>();
+  @Input() buildingIndex: number;
+  @Input() floorIndex: number;
+  @Input() roomIndex: number;
+  @Output() selectedRoom: EventEmitter<RoomComponent> = new EventEmitter<RoomComponent>();
   backgroundColor: string;
   selected = false;
+  hoursReserved = 2;
+  intervalId = null;
 
-  constructor() {
+  constructor(private buildingService: FirebaseService) {
   }
 
   ngOnInit() {
     this.changeBackground();
+
+    if (this.room.occupied) {
+      setInterval(() => this.checkReservedRoom(), 60000);
+    }
   }
 
   changeBackground() {
@@ -47,15 +57,33 @@ export class RoomComponent implements OnInit {
     return this.room.roomType === 'cafetaria' || this.room.roomType === 'studyroom';
   }
 
-  canReservate() {
-    return this.room.roomType === 'aula' || this.room.roomType === 'classroom' || this.room.roomType === 'conferenceroom';
+  canReserve() {
+    return (this.room.roomType === 'aula' || this.room.roomType === 'classroom' || this.room.roomType === 'conferenceroom')
+      && this.room.occupied === false;
   }
 
   onRoomClicked() {
-    this.selectedRoom.emit(this.room);
-    this.selected = true;
-    setTimeout(() => {
-      this.selected = false;
-    }, 5000);
+    this.selectedRoom.emit(this);
+  }
+
+  reserveRoom() {
+    if (this.room.occupied === false) {
+      this.room.occupied = true;
+      this.room.minutesLeft = this.hoursReserved * 60;
+      this.intervalId = setInterval(() => this.checkReservedRoom(), 60000);
+      this.changeBackground();
+      this.buildingService.updateRoom(this.room, this.buildingIndex, this.floorIndex, this.roomIndex);
+    }
+  }
+
+  checkReservedRoom() {
+    if (this.room.minutesLeft > 0) {
+      this.room.minutesLeft -= 1;
+    } else {
+      this.room.occupied = false;
+      clearInterval(this.intervalId);
+      this.changeBackground();
+    }
+    this.buildingService.updateRoom(this.room, this.buildingIndex, this.floorIndex, this.roomIndex);
   }
 }
