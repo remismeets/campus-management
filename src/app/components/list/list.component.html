@@ -1,22 +1,6 @@
-<div class="selection">
-  <div>
-    <select [(ngModel)]="selectedBuilding" (ngModelChange)="onChangeBuilding($event)">
-      <option *ngFor="let building of buildings;index as i" [ngValue]="i">
-        {{ building.buildingName }}
-      </option>
-    </select>
-  </div>
+<app-navigation (navigationEvent)="setNavigation($event)"></app-navigation>
 
-  <div *ngIf="floors">
-    <select [ngModel]="selectedFloor" (ngModelChange)="onChangeFloor($event)">
-      <option *ngFor="let floor of floors;index as i" [ngValue]="i">
-        {{ floor.floorName }}
-      </option>
-    </select>
-  </div>
-</div>
-
-<div class="listfloor" *ngIf="rooms">
+<div class="listfloor" *ngIf="navigation">
   <app-room-options class="options"
                     (name)="onNameChecked($event)"
                     (type)="onTypeChecked($event)"
@@ -25,16 +9,15 @@
                     (occupied)="onOccupiedChecked($event)"
   ></app-room-options>
   <div class="rooms-container">
-  <app-room *ngFor="let room of rooms;index as i"
-            [room]="room"
+  <app-room class="room" *ngFor="let room of navigation.rooms;index as i"
             [nameChecked]="nameChecked"
             [typeChecked]="typeChecked"
             [capacityChecked]="capacityChecked"
             [beamerChecked]="beamerChecked"
             [occupiedChecked]="occupiedChecked"
-            [buildingIndex]="buildingIndex"
-            [floorIndex]="floorIndex"
-            [roomIndex]="i"
+            [buildingId]="navigation.buildingId"
+            [floorId]="navigation.floorId"
+            [roomId]="i"
   (selectedRoom)="onSelectedRoom($event)">
   </app-room>
   </div>

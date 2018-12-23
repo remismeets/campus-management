@@ -1,3 +1,14 @@
-<p>
-  floorplan works!
-</p>
+<app-navigation (navigationEvent)="setNavigation($event)"></app-navigation>
+
+<div class="rooms-container" *ngIf="navigation">
+  <app-room [style.grid-area]="getGridArea(i)" *ngFor="let room of navigation.rooms;index as i"
+            [nameChecked]="nameChecked"
+            [typeChecked]="typeChecked"
+            [capacityChecked]="capacityChecked"
+            [beamerChecked]="beamerChecked"
+            [occupiedChecked]="occupiedChecked"
+            [buildingId]="navigation.buildingId"
+            [floorId]="navigation.floorId"
+            [roomId]="i">
+  </app-room>
+</div>

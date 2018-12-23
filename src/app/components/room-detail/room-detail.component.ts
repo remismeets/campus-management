@@ -26,7 +26,10 @@ export class RoomDetailComponent implements OnInit {
     this.roomRef = this.firebaseService.getRoom(buildingId, floorId, roomId);
     this.roomRef.valueChanges().subscribe(room => {
       this.room = room as Room;
-    });
+    },
+      error => {
+        console.log(error as string);
+      });
   }
 
   hasNoise() {

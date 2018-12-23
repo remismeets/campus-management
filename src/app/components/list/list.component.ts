@@ -5,6 +5,7 @@ import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
 import {RoomComponent} from '../room/room.component';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
+import {Navigation} from '../../model/navigation';
 
 @Component({
   selector: 'app-list',
@@ -12,13 +13,7 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  buildings: Building[];
-  selectedBuilding: Building;
-  floors: Floor[];
-  selectedFloor: Floor;
-  buildingIndex: number;
-  floorIndex: number;
-  rooms: Room[];
+  navigation: Navigation;
   nameChecked = true;
   typeChecked = true;
   capacityChecked = false;
@@ -27,33 +22,14 @@ export class ListComponent implements OnInit {
   selectedRoom: RoomComponent;
   timeOutId: number;
 
-  constructor(private buildingService: FirebaseService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.buildingService.getBuildings()
-      .subscribe(buildings => {
-        this.buildings = buildings as Building[];
-      });
   }
 
-  onChangeBuilding(index) {
-    this.buildingIndex = index;
-    this.buildingService.getFloors(this.buildingIndex)
-      .subscribe(floors => {
-        this.floors = floors as Floor[];
-      });
-    if (typeof this.floorIndex !== 'undefined') {
-      this.onChangeFloor(this.floorIndex);
-    }
-  }
-
-  onChangeFloor(index) {
-    this.floorIndex = index;
-    this.buildingService.getRooms(this.buildingIndex, this.floorIndex)
-      .subscribe(rooms => {
-        this.rooms = rooms as Room[];
-      });
+  setNavigation(navigation: Navigation) {
+    this.navigation = navigation;
   }
 
   onNameChecked(name) {

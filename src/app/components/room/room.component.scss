@@ -39,7 +39,7 @@ button:hover {
 
 .room-container{
   width: 100%;
-  margin: 25px auto 0 auto;
+  height: 100%;
   box-shadow: 1px 1px 10px #b6b6b6;
   background-color: #f3f3f3;
 }
@@ -76,6 +76,10 @@ button:hover {
 
 .slider {
   width: 40%;
+}
+
+.reservation-timer {
+  font-size: 14px;
 }
 
 /* track */
@@ -213,4 +217,10 @@ $md-radio-ripple-size: 15px;
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 480px) {
+  .reservation-timer {
+    font-size: 24px;
+  }
 }

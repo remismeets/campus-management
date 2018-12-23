@@ -4,30 +4,6 @@
   grid-template-columns: 100%;
 }
 
-select {
-  display: block;
-  margin: 5px;
-  font-size: 1em;
-  background-color: transparent;
-  color: #447cb2;
-  padding: 16px 32px;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-select option {
-  margin: 40px;
-  background: #f3f3f3;
-  color: #447cb2;
-}
-
-.selection {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .rooms-container {
   display: flex;
   flex-direction: column;
@@ -35,7 +11,11 @@ select option {
   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 540px) {
+.room {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 840px) {
   .listfloor {
     flex-direction: row;
     grid-template-rows: 100%;

@@ -25,9 +25,4 @@ export class FirebaseService {
   public getRoom(buildingIndex: string, floorIndex: string, roomIndex: string) {
     return this.db.object('buildings/' + buildingIndex + '/floors/' + floorIndex + '/rooms/' + roomIndex);
   }
-
-  public updateRoom(room: Room, buildingIndex: number, floorIndex: number, roomIndex: number) {
-    const roomRef = this.db.object('buildings/' + buildingIndex + '/floors/' + floorIndex + '/rooms/' + roomIndex);
-    roomRef.update({occupied: room.occupied, minutesLeft: room.minutesLeft});
-  }
 }

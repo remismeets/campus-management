@@ -1,4 +1,4 @@
-<div class="room-container" (click)="onRoomClicked()">
+<div  *ngIf="room" class="room-container" (click)="onRoomClicked()">
   <div class="room-name" *ngIf="nameChecked">{{room.roomName}}</div>
   <div class="room-info">
     <div *ngIf="typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
@@ -13,7 +13,7 @@
     <div *ngIf="selected" class="options-container">
       <div *ngIf="hasSlider()" class="slider">
         <input type="range" min="0" [max]="room.capacity" [value]="room.noise"
-               id="myRange" [(ngModel)]="room.noise" (change)="changeBackground()">
+               id="myRange" [(ngModel)]="room.noise" (change)="changeSlider()">
       </div>
       <div *ngIf="canReserve()" class="reserve-container">
         <div>
@@ -32,7 +32,8 @@
         </div>
         <button (click)="reserveRoom()">Reserve</button>
       </div>
-      <button [routerLink]="['/buildings', buildingIndex, 'floors', floorIndex, 'rooms', roomIndex]">Details</button>
+      <div class="reservation-timer" *ngIf="isOccupied()">Room is available in {{minutesLeft}} minutes</div>
+      <button [routerLink]="['/buildings', buildingId, 'floors', floorId, 'rooms', roomId]">Details</button>
     </div>
   </div>
-</div>
+</div >

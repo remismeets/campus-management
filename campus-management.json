@@ -9,56 +9,80 @@
             {
               "roomName": "GR -100",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": false,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 1,
+              "column": 1,
+              "spanRow": 4,
+              "spanColumn": 5
             },
             {
               "roomName": "GR -101",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 1,
+              "column": 7,
+              "spanRow": 4,
+              "spanColumn": 5
             },
             {
               "roomName": "GR -102",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 1,
+              "column": 13,
+              "spanRow": 4,
+              "spanColumn": 5
             },
             {
               "roomName": "GR -106",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": false,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 10,
+              "column": 1,
+              "spanRow": 5,
+              "spanColumn": 6
             },
             {
               "roomName": "GR -107",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 10,
+              "column": 8,
+              "spanRow": 4,
+              "spanColumn": 5
             },
             {
               "roomName": "GR -109",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0,
+              "row": 10,
+              "column": 14,
+              "spanRow": 4,
+              "spanColumn": 4
             }
           ]
         },
@@ -68,20 +92,20 @@
             {
               "roomName": "GR 001",
               "roomType": "aula",
-              "capacity": 0,
+              "capacity": 200,
               "beamer": true,
               "occupied": false,
               "noise": 0,
-              "minutesLeft": 0
+              "timeStamp": 0
             },
             {
               "roomName": "GR 008",
               "roomType": "studyroom",
-              "capacity": 100,
+              "capacity": 300,
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             }
           ]
         },
@@ -89,22 +113,67 @@
           "floorName": 1,
           "rooms": [
             {
-              "roomName": "GR 101",
+              "roomName": "GR 100",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
+            },
+            {
+              "roomName": "GR 101",
+              "roomType": "classroom",
+              "capacity": 50,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20,
+              "timeStamp": 0
             },
             {
               "roomName": "GR 102",
               "roomType": "classroom",
-              "capacity": 0,
+              "capacity": 50,
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
+            },
+            {
+              "roomName": "GR 103",
+              "roomType": "classroom",
+              "capacity": 50,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20,
+              "timeStamp": 0
+            },
+            {
+              "roomName": "GR 104",
+              "roomType": "classroom",
+              "capacity": 50,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20,
+              "timeStamp": 0
+            },
+            {
+              "roomName": "GR 105",
+              "roomType": "classroom",
+              "capacity": 50,
+              "beamer": true,
+              "occupied": false,
+              "noise": 20,
+              "timeStamp": 0
+            },
+            {
+              "roomName": "GR 105",
+              "roomType": "cafetaria",
+              "capacity": 250,
+              "beamer": false,
+              "occupied": false,
+              "noise": 100,
+              "timeStamp": 0
             }
           ]
         }
@@ -123,7 +192,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             },
             {
               "roomName": "PH -102",
@@ -132,7 +201,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             }
           ]
         },
@@ -146,7 +215,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             },
             {
               "roomName": "PH E002",
@@ -155,7 +224,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             }
           ]
         },
@@ -169,7 +238,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             },
             {
               "roomName": "PH E102",
@@ -178,7 +247,7 @@
               "beamer": true,
               "occupied": false,
               "noise": 20,
-              "minutesLeft": 0
+              "timeStamp": 0
             }
           ]
         }
