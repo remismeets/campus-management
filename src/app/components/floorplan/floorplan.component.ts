@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Building} from '../../model/building';
-import {Floor} from '../../model/floor';
-import {Room} from '../../model/room';
 import {RoomComponent} from '../room/room.component';
-import {FirebaseService} from '../../services/firebase.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Navigation} from '../../model/navigation';
 
@@ -36,5 +32,37 @@ export class FloorplanComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustStyle(this.navigation.rooms[index].row + ' / ' +
       this.navigation.rooms[index].column + ' / ' + 'span ' + this.navigation.rooms[index].spanRow +
       ' / span ' + this.navigation.rooms[index].spanColumn);
+  }
+
+  onNameChecked(name) {
+    this.nameChecked = name;
+  }
+
+  onTypeChecked(type) {
+    this.typeChecked = type;
+  }
+
+  onCapacityChecked(capacity) {
+    this.capacityChecked = capacity;
+  }
+
+  onBeamerChecked(beamer) {
+    this.beamerChecked = beamer;
+  }
+
+  onOccupiedChecked(occupied) {
+    this.occupiedChecked = occupied;
+  }
+
+  onSelectedRoom(selectedRoom) {
+    if (this.selectedRoom != null) {
+      this.selectedRoom.selected = false;
+      clearTimeout(this.timeOutId);
+    }
+    this.selectedRoom = selectedRoom;
+    this.selectedRoom.selected = true;
+    this.timeOutId = setTimeout(() => {
+      this.selectedRoom.selected = false;
+    }, 5000);
   }
 }

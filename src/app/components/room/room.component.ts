@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
 import {FirebaseService} from '../../services/firebase.service';
 import { AngularFireObject } from '@angular/fire/database';

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FirebaseService} from '../../services/firebase.service';
-import {Building} from '../../model/building';
-import {Floor} from '../../model/floor';
-import {Room} from '../../model/room';
 import {RoomComponent} from '../room/room.component';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {Navigation} from '../../model/navigation';
 
 @Component({

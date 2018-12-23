@@ -1,6 +1,6 @@
 <app-navigation (navigationEvent)="setNavigation($event)"></app-navigation>
 
-<div class="listfloor" *ngIf="navigation">
+<div class="floor-container" *ngIf="navigation">
   <app-room-options class="options"
                     (name)="onNameChecked($event)"
                     (type)="onTypeChecked($event)"

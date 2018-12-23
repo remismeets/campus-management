@@ -1,18 +1,14 @@
-
 img {
   width: 50px;
   height: 50px;
 }
 
-
-/* Toolbar section */
 .options-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 
 button {
   background-color: transparent;
@@ -82,7 +78,6 @@ button:hover {
   font-size: 14px;
 }
 
-/* track */
 input[type="range"] {
   -webkit-appearance: none !important;
   width: 100%;
@@ -107,7 +102,6 @@ input[type="range"]::-moz-range-track {
   padding: 0;
 }
 
-/* thumb */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none !important;
   transform:scale(0.75);
@@ -131,7 +125,6 @@ input[type="range"]::-moz-range-thumb {
   outline:none
 }
 
-/* thumb hover */
 input[type="range"]::-webkit-slider-thumb:hover {
   transform:scale(0.85);
 }
@@ -139,14 +132,12 @@ input[type="range"]::-moz-range-thumb:hover{
   transform:scale(0.85);
 }
 
-/* thumb active */
 input[type="range"]::-webkit-slider-thumb:active {
   transform:scale(1);
 }
 input[type="range"]::-moz-range-thumb:active{
   transform:scale(1);
 }
-
 
 $md-radio-checked-color: rgb(51, 122, 183);
 $md-radio-border-color: rgba(0, 0, 0, 0.54);
