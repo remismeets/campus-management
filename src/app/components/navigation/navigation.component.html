@@ -1,6 +1,7 @@
 <div class="selection">
   <div>
     <select [(ngModel)]="selectedBuilding" (ngModelChange)="onChangeBuilding($event)">
+      <option value="" selected disabled hidden>Choose a building.......</option>
       <option *ngFor="let building of buildings;index as i" [ngValue]="i">
         {{ building.buildingName }}
       </option>
