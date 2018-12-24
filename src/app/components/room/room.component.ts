@@ -104,7 +104,6 @@ export class RoomComponent implements OnInit, OnDestroy {
       this.room.timeStamp = (this.hoursReserved * 60000) + Date.now();
       this.roomRef.update(this.room).then(() => {
         this.isReserved = true;
-        console.log(this.isReserved);
         setTimeout(() => this.isReserved = false, 2000);
       })
         .catch(err => console.log(err as string));

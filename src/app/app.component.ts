@@ -16,12 +16,10 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log(event.target.innerWidth);
     if (event.target.innerWidth < 840) {
       this.router.navigate(['/list']);
     }
   }
-
 }
 
 
