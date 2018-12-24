@@ -7,7 +7,7 @@
     </div>
     <div class="input-container">
       <label class="input-label" for="capacity">Capacity</label>
-      <input id="capacity" placeholder="Capacity" type="text" name="capacity" required [(ngModel)]="room.capacity">
+      <input id="capacity" placeholder="Capacity" type="number" name="capacity" required [(ngModel)]="room.capacity">
     </div>
     <div *ngIf="hasNoise()" class="input-container">
       <label class="input-label" for="noise">Noise</label>
@@ -17,19 +17,19 @@
     </div>
     <div class="input-container">
       <label class="input-label" for="row">Row</label>
-      <input id="row" placeholder="Row" type="text" name="row" [(ngModel)]="room.row">
+      <input id="row" placeholder="Row" type="number" name="row" [(ngModel)]="room.row">
     </div>
     <div class="input-container">
       <label class="input-label" for="column">Column</label>
-      <input id="column" placeholder="Column" type="text" name="column" [(ngModel)]="room.column">
+      <input id="column" placeholder="Column" type="number" name="column" [(ngModel)]="room.column">
     </div>
     <div class="input-container">
       <label class="input-label" for="span-row">Span row</label>
-      <input id="span-row" placeholder="Span row" type="text" name="span-row" [(ngModel)]="room.spanRow">
+      <input id="span-row" placeholder="Span row" type="number" name="span-row" [(ngModel)]="room.spanRow">
     </div>
     <div class="input-container">
       <label class="input-label" for="span-column">Span column</label>
-      <input id="span-column" placeholder="Span column" type="text" name="span-column" [(ngModel)]="room.spanColumn">
+      <input id="span-column" placeholder="Span column" type="number" name="span-column" [(ngModel)]="room.spanColumn">
     </div>
     <div class="input-container">
       <div class="radio-container">

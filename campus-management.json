@@ -7,7 +7,7 @@
           "floorName": -1,
           "rooms": [
             {
-              "roomName": "PH E100",
+              "roomName": "GR -100",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": false,
@@ -20,7 +20,7 @@
               "spanColumn": 5
             },
             {
-              "roomName": "PH E101",
+              "roomName": "GR -101",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": true,
@@ -33,7 +33,7 @@
               "spanColumn": 5
             },
             {
-              "roomName": "PH E102",
+              "roomName": "GR -102",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": true,
@@ -46,7 +46,7 @@
               "spanColumn": 8
             },
             {
-              "roomName": "PH E106",
+              "roomName": "GR -106",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": false,
@@ -59,7 +59,7 @@
               "spanColumn": 6
             },
             {
-              "roomName": "PH E107",
+              "roomName": "GR -107",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": true,
@@ -72,7 +72,7 @@
               "spanColumn": 5
             },
             {
-              "roomName": "PH E109",
+              "roomName": "GR -109",
               "roomType": "classroom",
               "capacity": 50,
               "beamer": true,

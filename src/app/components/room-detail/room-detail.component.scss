@@ -38,7 +38,7 @@
   width:40%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"]  {
   height: 60px;
   width: 150px;
   display: block;
@@ -64,7 +64,7 @@ input[type="text"] {
   }
 }
 
-input[type="text"]::-webkit-input-placeholder, button {
+input[type="text"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, button {
   font-family: 'roboto', sans-serif;
   transition: all 0.3s ease-in-out;
 }
@@ -310,7 +310,7 @@ input[type="range"]::-moz-range-thumb:active{
     width: 200px;
   }
 
-  input[type="text"] {
+  input[type="text"], input[type="number"] {
     width: 200px;
   }
 }
