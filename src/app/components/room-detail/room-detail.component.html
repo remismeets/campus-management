@@ -2,13 +2,34 @@
   <div class="room-name">{{room.roomName}}</div>
   <form class="room-info" (ngSubmit)="saveRoom()" #roomForm="ngForm">
     <div class="input-container">
-      <input id="roomname"  placeholder="Room name" type="text" name="roomname" required [(ngModel)]="room.roomName">
+      <label class="input-label" for="room-name">Room name</label>
+      <input id="room-name"  placeholder="Room name" type="text" name="room-name" required [(ngModel)]="room.roomName">
     </div>
     <div class="input-container">
-      <input placeholder="Capacity" type="text" name="capacity" required [(ngModel)]="room.capacity">
+      <label class="input-label" for="capacity">Capacity</label>
+      <input id="capacity" placeholder="Capacity" type="text" name="capacity" required [(ngModel)]="room.capacity">
     </div>
     <div *ngIf="hasNoise()" class="input-container">
-      <input placeholder="Noise" type="text" name="noise" [(ngModel)]="room.noise">
+      <label class="input-label" for="noise">Noise</label>
+      <div class="slider">
+        <input type="range" min="0" [max]="room.capacity" [value]="room.noise" id="noise" name="noise" [(ngModel)]="room.noise">
+      </div>
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="row">Row</label>
+      <input id="row" placeholder="Row" type="text" name="row" [(ngModel)]="room.row">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="column">Column</label>
+      <input id="column" placeholder="Column" type="text" name="column" [(ngModel)]="room.column">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="span-row">Span row</label>
+      <input id="span-row" placeholder="Span row" type="text" name="span-row" [(ngModel)]="room.spanRow">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="span-column">Span column</label>
+      <input id="span-column" placeholder="Span column" type="text" name="span-column" [(ngModel)]="room.spanColumn">
     </div>
     <div class="input-container">
       <div class="radio-container">

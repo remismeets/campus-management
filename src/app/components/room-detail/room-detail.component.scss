@@ -30,9 +30,17 @@
   justify-content: center;
 }
 
+.input-label {
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-right: 30px;
+  font-size: 20px;
+  width:40%;
+}
+
 input[type="text"] {
   height: 60px;
-  width: 200px;
+  width: 150px;
   display: block;
   border: none;
   padding: 10px 0;
@@ -42,7 +50,7 @@ input[type="text"] {
   background-size: 200px 100%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #4691d9 4%) no-repeat -200px 0;
   color: darken(#4691d9, 20%);
-  &:focus, &:valid {
+  &:focus {
     box-shadow: none;
     outline: none;
     background-position: 0 0;
@@ -225,5 +233,84 @@ $md-radio-ripple-size: 15px;
 @media screen and (min-width: 540px) {
   .room-container {
     width: 40%;
+  }
+}
+
+.slider {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 1px;
+  background-color: #0074D9;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  transition: all 400ms;
+  outline:none;
+  padding: 0;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  background-color: #4691d9;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  transition: all 400ms;
+  outline:none;
+  padding: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  transform:scale(0.75);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #4691d9;
+  border-radius: 40px;
+  transition: all 400ms;
+  outline:none
+}
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none !important;
+  transform:scale(0.75);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #4691d9;
+  border-radius: 30px;
+  transition: all 400ms;
+  outline:none
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform:scale(0.85);
+}
+input[type="range"]::-moz-range-thumb:hover{
+  transform:scale(0.85);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform:scale(1);
+}
+input[type="range"]::-moz-range-thumb:active{
+  transform:scale(1);
+}
+
+@media screen and (min-width: 840px) {
+  .slider {
+    width: 200px;
+  }
+
+  input[type="text"] {
+    width: 200px;
   }
 }

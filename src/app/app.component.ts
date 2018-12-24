@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    if (event.target.innerWidth < 840) {
+    if (event.target.innerWidth < 840 && this.router.url === '/floorplan') {
       this.router.navigate(['/list']);
     }
   }
