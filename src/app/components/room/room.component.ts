@@ -26,7 +26,7 @@ export class RoomComponent implements OnInit, OnDestroy {
   roomRef: AngularFireObject<any>;
   isReserved: boolean;
   isAvailable: boolean;
-  minutesLeft: number;
+  timeString: string;
 
   constructor(private firebaseService: FirebaseService) {
   }
@@ -41,7 +41,7 @@ export class RoomComponent implements OnInit, OnDestroy {
             clearInterval(this.intervalId);
             this.intervalId = null;
           }
-          this.intervalId = setInterval(() => this.checkReservedRoom(), 5000);
+          this.intervalId = setInterval(() => this.checkReservedRoom(), 1000);
           this.checkReservedRoom();
         }
       },
@@ -101,7 +101,7 @@ export class RoomComponent implements OnInit, OnDestroy {
   reserveRoom() {
     if (this.room.occupied === false) {
       this.room.occupied = true;
-      this.room.timeStamp = (this.hoursReserved * 60000) + Date.now();
+      this.room.timeStamp = (this.hoursReserved * 3600000) + Date.now();
       this.roomRef.update(this.room).then(() => {
         this.isReserved = true;
         setTimeout(() => this.isReserved = false, 2000);
@@ -124,7 +124,9 @@ export class RoomComponent implements OnInit, OnDestroy {
       })
         .catch(err => console.log(err));
     } else {
-      this.minutesLeft = Math.round((this.room.timeStamp - Date.now()) / 60000);
+      const date = new Date();
+      date.setTime(this.room.timeStamp - Date.now());
+      this.timeString = 'Room is available in ' + (date.getHours() - 1) + ':' + date.getMinutes() + ':' + date.getSeconds();
     }
   }
 }

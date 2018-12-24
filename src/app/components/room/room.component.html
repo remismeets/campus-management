@@ -32,7 +32,7 @@
         </div>
         <button (click)="reserveRoom()">Reserve</button>
       </div>
-      <div class="reservation-timer" *ngIf="isOccupied()">Room is available in {{minutesLeft}} minutes</div>
+      <div class="reservation-timer" *ngIf="isOccupied()">{{timeString}}</div>
       <button [routerLink]="['/buildings', buildingId, 'floors', floorId, 'rooms', roomId]">Details</button>
     </div>
   </div>
