@@ -1,14 +1,14 @@
 <div  *ngIf="room" class="room-container" (click)="onRoomClicked()">
-  <div class="room-name" *ngIf="nameChecked">{{room.roomName}}</div>
+  <div class="room-name" *ngIf="filter.nameChecked">{{room.roomName}}</div>
   <div class="room-info">
-    <div *ngIf="typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
-    <div><span class="capacity" *ngIf="capacityChecked">{{room.capacity}}</span> <i *ngIf="occupiedChecked"
+    <div *ngIf="filter.typeChecked"><img [src]='"assets/img/"+room.roomType+".svg"'></div>
+    <div><span class="capacity" *ngIf="filter.capacityChecked">{{room.capacity}}</span> <i *ngIf="filter.occupiedChecked"
                                                                                     class="fas fa-users"
                                                                                     [style.color]="backgroundColor"></i>
     </div>
-    <div *ngIf="room.beamer;else unavailable_div"><img *ngIf="beamerChecked" src="assets/img/beamer.svg"></div>
+    <div *ngIf="room.beamer;else unavailable_div"><img *ngIf="filter.beamerChecked" src="assets/img/beamer.svg"></div>
     <ng-template #unavailable_div>
-      <div><img *ngIf="beamerChecked" src="assets/img/cross.svg"></div>
+      <div><img *ngIf="filter.beamerChecked" src="assets/img/cross.svg"></div>
     </ng-template>
     <div *ngIf="selected" class="options-container">
       <div *ngIf="hasSlider()" class="slider">
