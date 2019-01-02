@@ -1,20 +1,10 @@
 <app-navigation (navigationEvent)="setNavigation($event)"></app-navigation>
 
 <div class="floor-container" *ngIf="navigation">
-  <app-room-options class="options"
-                    (name)="onNameChecked($event)"
-                    (type)="onTypeChecked($event)"
-                    (capacity)="onCapacityChecked($event)"
-                    (beamer)="onBeamerChecked($event)"
-                    (occupied)="onOccupiedChecked($event)"
-  ></app-room-options>
+  <app-room-options class="options" (filterEvent)="onFilterEvent($event)"></app-room-options>
   <div class="rooms-container">
     <app-room [style.grid-area]="getGridArea(i)" *ngFor="let room of navigation.rooms;index as i"
-              [nameChecked]="nameChecked"
-              [typeChecked]="typeChecked"
-              [capacityChecked]="capacityChecked"
-              [beamerChecked]="beamerChecked"
-              [occupiedChecked]="occupiedChecked"
+              [filter]="filter"
               [buildingId]="navigation.buildingId"
               [floorId]="navigation.floorId"
               [roomId]="i"

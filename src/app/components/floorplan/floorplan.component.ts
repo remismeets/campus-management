@@ -1,28 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {RoomComponent} from '../room/room.component';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Navigation} from '../../model/navigation';
+import {Filter} from '../../model/filter';
 
 @Component({
   selector: 'app-floorplan',
   templateUrl: './floorplan.component.html',
   styleUrls: ['./floorplan.component.scss']
 })
-export class FloorplanComponent implements OnInit {
+export class FloorplanComponent {
   navigation: Navigation;
-  nameChecked = true;
-  typeChecked = true;
-  capacityChecked = false;
-  beamerChecked = false;
-  occupiedChecked = true;
+  filter: Filter;
   selectedRoom: RoomComponent;
   timeOutId: number;
 
-  constructor(public sanitizer: DomSanitizer) {
-  }
-
-  ngOnInit() {
-  }
+  constructor(public sanitizer: DomSanitizer) {}
 
   setNavigation(navigation: Navigation) {
     this.navigation = navigation;
@@ -34,24 +27,8 @@ export class FloorplanComponent implements OnInit {
       ' / span ' + this.navigation.rooms[index].spanColumn);
   }
 
-  onNameChecked(name) {
-    this.nameChecked = name;
-  }
-
-  onTypeChecked(type) {
-    this.typeChecked = type;
-  }
-
-  onCapacityChecked(capacity) {
-    this.capacityChecked = capacity;
-  }
-
-  onBeamerChecked(beamer) {
-    this.beamerChecked = beamer;
-  }
-
-  onOccupiedChecked(occupied) {
-    this.occupiedChecked = occupied;
+  onFilterEvent(filter) {
+    this.filter = filter;
   }
 
   onSelectedRoom(selectedRoom) {

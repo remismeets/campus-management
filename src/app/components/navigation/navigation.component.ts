@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
   navigation: Navigation;
   @Output() navigationEvent: EventEmitter<Navigation> = new EventEmitter<Navigation>();
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit() {
     this.navigation = new Navigation();

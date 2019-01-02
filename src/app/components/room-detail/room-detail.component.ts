@@ -15,8 +15,7 @@ export class RoomDetailComponent implements OnInit {
   roomtypes: string[] = ['classroom', 'aula', 'conferenceroom', 'bureau', 'studyroom', 'cafetaria'];
   toast: boolean;
 
-  constructor(private route: ActivatedRoute, private firebaseService: FirebaseService) {
-  }
+  constructor(private route: ActivatedRoute, private firebaseService: FirebaseService) {}
 
   ngOnInit() {
     const buildingId = this.route.snapshot.paramMap.get('buildingid');

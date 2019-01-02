@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Filter} from '../../model/filter';
 
 @Component({
   selector: 'app-room-options',
@@ -6,40 +7,23 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./room-options.component.scss']
 })
 export class RoomOptionsComponent implements OnInit {
-  nameChecked = true;
-  typeChecked = true;
-  capacityChecked = false;
-  beamerChecked = false;
-  occupiedChecked = true;
-  @Output() name: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() type: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() capacity: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() beamer: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() occupied: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  constructor() {
-  }
+  filter: Filter;
+  @Output() filterEvent: EventEmitter<Filter> = new EventEmitter<Filter>();
 
   ngOnInit() {
+    if (localStorage.getItem('filter') === null) {
+      this.filter = new Filter();
+      this.filter.nameChecked = true;
+      this.filter.typeChecked = true;
+      this.filter.occupiedChecked = true;
+    } else {
+      this.filter = JSON.parse(localStorage.getItem('filter'));
+    }
+    this.emitFilterEvent();
   }
 
-  emitNameChecked() {
-    this.name.emit(this.nameChecked);
-  }
-
-  emitTypeChecked() {
-    this.type.emit(this.typeChecked);
-  }
-
-  emitCapacityChecked() {
-    this.capacity.emit(this.capacityChecked);
-  }
-
-  emitBeamerChecked() {
-    this.beamer.emit(this.beamerChecked);
-  }
-
-  emitOccupiedChecked() {
-    this.occupied.emit(this.occupiedChecked);
+  emitFilterEvent() {
+    localStorage.setItem('filter', JSON.stringify(this.filter));
+    this.filterEvent.emit(this.filter);
   }
 }

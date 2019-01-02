@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {Room} from '../../model/room';
 import {FirebaseService} from '../../services/firebase.service';
 import { AngularFireObject } from '@angular/fire/database';
+import {Filter} from '../../model/filter';
 
 @Component({
   selector: 'app-room',
@@ -9,17 +10,7 @@ import { AngularFireObject } from '@angular/fire/database';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit, OnDestroy {
-  @Input() nameChecked: boolean;
-  @Input() typeChecked: boolean;
-  @Input() capacityChecked: boolean;
-  @Input() beamerChecked: boolean;
-  @Input() occupiedChecked: boolean;
-  @Input() buildingId: string;
-  @Input() floorId: string;
-  @Input() roomId: string;
-  @Output() selectedRoom: EventEmitter<RoomComponent> = new EventEmitter<RoomComponent>();
   backgroundColor: string;
-  selected = false;
   hoursReserved = 2;
   intervalId = null;
   room: Room;
@@ -27,9 +18,14 @@ export class RoomComponent implements OnInit, OnDestroy {
   isReserved: boolean;
   isAvailable: boolean;
   timeString: string;
+  selected = false;
+  @Input() filter: Filter;
+  @Input() buildingId: string;
+  @Input() floorId: string;
+  @Input() roomId: string;
+  @Output() selectedRoom: EventEmitter<RoomComponent> = new EventEmitter<RoomComponent>();
 
-  constructor(private firebaseService: FirebaseService) {
-  }
+  constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit() {
     this.roomRef = this.firebaseService.getRoom(this.buildingId, this.floorId, this.roomId);
