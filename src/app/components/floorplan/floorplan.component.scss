@@ -1,7 +1,7 @@
 .rooms-container {
   display: grid;
-  grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
-  grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
   height: 750px;
   border: dashed #0769b2;
   padding: 5px;
